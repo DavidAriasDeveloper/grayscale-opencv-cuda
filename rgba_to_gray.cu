@@ -7,7 +7,7 @@
 
 using namespace std;
 
-__global__ rgba_to_gray_kernel( const uchar4* const rgbaImg,
+__global__ void rgba_to_gray_kernel( const uchar4* const rgbaImg,
                                 unsigned char* const grayImg,
                                 int rows,
                                 int cols){
