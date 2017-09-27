@@ -5,6 +5,8 @@
 //Maximo de hilos por bloque
 #define TxB 1024
 
+using namespace std;
+
 __global__ rgba_to_gray_kernel( const uchar4* const rgbaImg,
                                 unsigned char* const grayImg,
                                 int rows,
