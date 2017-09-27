@@ -27,7 +27,7 @@ void rgba_to_gray(uchar4* const d_rgbaImg, unsigned char* const d_grayImg, size_
   long int grids_n = ceil(total_px/TxB);//Redondeamos la cantidad grids
   const dim3 blockSize(TxB, 1, 1);
   const dim3 gridSize(grids_n, 1, 1);
-  rgba_to_gray_kernel<<gridSize,blockSize>>(d_rgbaImg, d_grayImg, rows, cols);
+  rgba_to_gray_kernel<<<gridSize,blockSize>>>(d_rgbaImg, d_grayImg, rows, cols);
   cudaDeviceSynchronize();
   checkCudaErrors(cudaGetLastError);
 }
